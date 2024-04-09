@@ -15,3 +15,6 @@ package-uninstall:
 
 lint:
 	poetry run flake8 gendiff
+
+check-coverage:
+	poetry run pytest --cov=gendiff --cov-report=term-missing --cov-report=xml
