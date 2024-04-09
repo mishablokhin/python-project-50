@@ -1,5 +1,6 @@
 import json
 
+
 def format_value(value):
     if isinstance(value, bool):
         return str(value).lower()
@@ -27,5 +28,5 @@ def generate_diff(file_path1, file_path2):
             diffs.append(f"  + {key}: {format_value(dict2[key])}")
         else:
             diffs.append(f"    {key}: {format_value(dict1[key])}")
-    
+
     return '{\n' + '\n'.join(diffs) + '\n}'
