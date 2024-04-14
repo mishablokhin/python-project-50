@@ -9,3 +9,5 @@
 asciinema record: run gendiff program
 [![asciicast](https://asciinema.org/a/uwRAO40GQtLfb7drCBpUkdXKd.svg)](https://asciinema.org/a/uwRAO40GQtLfb7drCBpUkdXKd)
 
+asciinema record: run gendiff program with two YAML files to compare
+[![asciicast](https://asciinema.org/a/PfzYscjRrbpGCKzhpU2qJrKKR.svg)](https://asciinema.org/a/PfzYscjRrbpGCKzhpU2qJrKKR)
