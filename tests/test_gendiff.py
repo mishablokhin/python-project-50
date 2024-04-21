@@ -52,7 +52,7 @@ def test_generate_diff_nested_json():
 def test_generate_diff_nested_yaml_plain():
     path1 = 'tests/fixtures/file1_nested.yaml'
     path2 = 'tests/fixtures/file2_nested.yaml'
- 
+
     expected_result_path = 'tests/fixtures/expected_diff_nested_plain.txt'
 
     with open(expected_result_path) as f:
