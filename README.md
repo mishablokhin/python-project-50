@@ -21,8 +21,9 @@ make package-install
 - Удаление приложения из системы
 ```
 make package-uninstall
+```
 
-Запуск приложения из терминала после установки:
+- Запуск приложения из терминала после установки:
 ```
 gendiff --format json file1.json file2.json
 ```
