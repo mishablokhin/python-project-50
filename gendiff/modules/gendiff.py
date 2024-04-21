@@ -1,5 +1,5 @@
 from gendiff.modules.parse_file import read_data_file
-from gendiff.modules.formatters import format_diff
+from gendiff.modules.formatters import stylish
 
 
 def build_diff(data1, data2):
@@ -32,4 +32,4 @@ def generate_diff(file_path1, file_path2):
     dict1 = read_data_file(file_path1)
     dict2 = read_data_file(file_path2)
     diff = build_diff(dict1, dict2)
-    return format_diff(diff)
+    return stylish(diff)

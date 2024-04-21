@@ -1,4 +1,4 @@
-def format_diff(diff, depth=0):
+def stylish(diff, depth=0):
     indent = '    ' * depth
     lines = ['{']
     for key, node in sorted(diff.items()):
@@ -12,7 +12,7 @@ def format_node(node, key, depth, indent):
     line = []
     key_indent = f"{indent}    {key}: "
     if node['type'] == 'nested':
-        nested_formatted = format_diff(node['children'], depth + 1)
+        nested_formatted = stylish(node['children'], depth + 1)
         line.append(f"{key_indent}{nested_formatted}")
     elif node['type'] == 'unchanged':
         line.append(f"{key_indent}{format_value(node['value'], depth + 1)}")
