@@ -14,3 +14,6 @@ asciinema record: run gendiff program with two YAML files to compare
 
 asciinema record: run gendiff program with two nested YAML files to compare
 [![asciicast](https://asciinema.org/a/90N84DBWnMQMoznzrqeVQqCw5.svg)](https://asciinema.org/a/90N84DBWnMQMoznzrqeVQqCw5)
+
+asciinema record: run gendiff program with plain text output format
+[![asciicast](https://asciinema.org/a/a7U2zanFWya4bFHPnURfgyFFU.svg)](https://asciinema.org/a/a7U2zanFWya4bFHPnURfgyFFU)
