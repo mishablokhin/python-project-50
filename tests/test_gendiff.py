@@ -48,3 +48,15 @@ def test_generate_diff_nested_json():
         expected_result = f.read().strip()
     
     assert generate_diff(path1, path2) == expected_result
+
+
+def test_generate_diff_nested_yaml_plain():
+    path1 = 'tests/fixtures/file1_nested.yaml'
+    path2 = 'tests/fixtures/file2_nested.yaml'
+    
+    expected_result_path = 'tests/fixtures/expected_diff_nested_plain.txt'
+    
+    with open(expected_result_path) as f:
+        expected_result = f.read().strip()
+    
+    assert generate_diff(path1, path2, 'plain') == expected_result
