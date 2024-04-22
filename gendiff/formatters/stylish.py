@@ -35,23 +35,21 @@ def format_change(node, key, depth, indent):
     return lines
 
 
-def format_nested_dict(value, depth):
-    indent = '    ' * depth
-    deeper_indent = '    ' * (depth + 1)
-    lines = ['{']
-    for key, val in sorted(value.items()):
-        formatted_value = format_value(val, depth + 1)
-        lines.append(f"{deeper_indent}{key}: {formatted_value}")
-    lines.append(indent + '}')
-    return '\n'.join(lines)
-
-
 def format_value(value, depth):
     if isinstance(value, dict):
-        return format_nested_dict(value, depth)
+        indent = '    ' * depth
+        deeper_indent = '    ' * (depth + 1)
+        lines = ['{']
+        for key, val in sorted(value.items()):
+            formatted_value = format_value(val, depth + 1)
+            lines.append(f"{deeper_indent}{key}: {formatted_value}")
+        lines.append(indent + '}')
+        return '\n'.join(lines)
     elif isinstance(value, bool):
         return str(value).lower()
     elif value is None:
         return 'null'
+    elif isinstance(value, str):
+        return value
     else:
         return str(value)
