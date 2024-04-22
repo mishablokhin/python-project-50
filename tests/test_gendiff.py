@@ -11,6 +11,7 @@ test_data = [
     ('tests/fixtures/file1.yaml', 'tests/fixtures/file2.yaml', 'tests/fixtures/expected_diff_json.txt', 'json')
 ]
 
+
 @pytest.mark.parametrize("file1, file2, expected_file, format_name", test_data)
 def test_generate_diff(file1, file2, expected_file, format_name):
     with open(expected_file) as f:
