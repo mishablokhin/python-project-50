@@ -1,4 +1,4 @@
-from .modules.gendiff import generate_diff
+from .gendiff import generate_diff
 
 
 __all__ = (
