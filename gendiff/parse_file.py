@@ -7,13 +7,14 @@ def read_file_content(file_path):
         return file.read()
 
 
-def parse_content(content, file_path):
-    if file_path.endswith(('.yaml', '.yml')):
+def parse_content(content, format_name):
+    if format_name in ['yaml', 'yml']:
         return yaml.safe_load(content)
-    elif file_path.endswith('.json'):
+    elif format_name == 'json':
         return json.loads(content)
 
 
-def read_data_file(file_path):
+def get_content(file_path):
     content = read_file_content(file_path)
-    return parse_content(content, file_path)
+    format_name = file_path.split('.')[-1]
+    return parse_content(content, format_name)
