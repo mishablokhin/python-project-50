@@ -15,7 +15,9 @@ def format_node(node, key, depth, indent):
         nested_formatted = stylish(node['children'], depth + 1)
         lines.append(f"{key_indent}{nested_formatted}")
     elif node['type'] == 'unchanged':
-        lines.append(f"{key_indent}{format_value(node['value'], depth + 1)}")
+        lines.append(
+            f"{key_indent}{format_value(node['value'], depth + 1)}"
+        )
     else:
         lines.extend(format_change(node, key, depth, indent))
     return lines
@@ -35,8 +37,11 @@ def format_change(node, key, depth, indent):
     elif node['type'] == 'changed':
         old_value_formatted = format_value(node['old_value'], depth + 1)
         new_value_formatted = format_value(node['new_value'], depth + 1)
-        lines.append(f"{indent}  {type_signs['changed'][0]} {key}: {old_value_formatted}")
-        lines.append(f"{indent}  {type_signs['changed'][1]} {key}: {new_value_formatted}")
+        line_old = f"{indent}  {type_signs['changed'][0]} {key}: " \
+                   f"{old_value_formatted}"
+        line_new = f"{indent}  {type_signs['changed'][1]} {key}: " \
+                   f"{new_value_formatted}"
+        lines.extend([line_old, line_new])
     return lines
 
 
